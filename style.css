@@ -1,0 +1,192 @@
+/* William Cooper Leone III
+Sprout & Grow, WEB140 Final Project
+11/16/23 */
+
+/* General styles */
+    body {
+    background-color:  rgb(52, 49, 87);
+    display: grid;
+    font-family: Helvetica, Geneva, sans-serif; 
+    overflow-x: hidden;
+    margin-left:0;
+    margin-right:0;
+    z-index:1 ; }
+    main {
+    margin-left: 10%; margin-right: 10%; margin-bottom: auto;
+    overflow: hidden;
+    column-gap: 2%; width: 80%;
+    height: 100%;}
+    section {display:grid;
+        align-items:center;
+        column-gap: 2%; width: 100%;}
+    a {
+    text-decoration: none;
+    color:#ffffff;
+    font-weight:100}
+    h1, h2, h3, h4, .pages, footer{
+        color: rgb(255, 255, 255);
+        text-align: center;}
+    h1 {
+    font-size: 220%;
+    border-bottom:3px solid #ffffff; letter-spacing: 2px;
+    margin-bottom: 0;
+    font-weight: bold; }
+    h4, p.c1, p.c2 {
+    font-size: 150%;
+    font-weight: bolder;
+    text-decoration: underline;}
+    img {border: 3px solid rgb(33, 31, 50); max-width: 100%;justify-self:center;
+}
+
+/* Deals with the bar at the top of the page */
+
+    .top {
+    position: fixed;
+    width: 101%;
+    top: 0%;
+    font-size: 100%;
+    z-index: 4;
+    background-color: rgb(33, 31, 50);
+    overflow: hidden;
+    right: -1%;}
+    #overlap {
+    position: relative;
+    z-index: 0;
+    justify-content: center;
+    margin: auto;
+    background-color:none;
+    font-size: 180%;
+    padding-top: 1%; }
+    .space {
+    display: flex;
+    padding-top: 45px}
+
+/* Styles for bottom of the page */
+    footer {
+    position: relative;
+    min-width: 102%;
+    justify-content: center;
+    font-weight: bold;
+    overflow: hidden;
+    right: 1%;
+    bottom: -10%;
+    margin:auto;
+    background-color: rgb(33, 31, 50);}
+
+/* Floats elements */
+    #right {
+    float: right } 
+    #left {
+    float: left}
+    #l {justify-content: left;}
+    #c {justify-content: center;}
+    #r {justify-self: right;}
+
+/* Adjusts the google map on Contact Info Page */
+    iframe {
+    justify-self: center; background-color: rgb(31, 65, 43);
+    height: 100%; width:70%;
+    padding-bottom: 0%; padding-left: 0%; padding-right: 0%;}
+
+/* Management system for grid*/
+    .c1 {
+        grid-column: 1; 
+        color: #fff}
+    .c2 {
+        grid-column: 2; 
+        color: #fff}
+    div.c1, div.c2 {
+        font-size: 150%;
+        font-weight: bolder;
+        color: #ffffff;
+        display: inline-block}
+    p.c1, p.c2 {
+    display: flex;
+    max-width: 50%;}
+    .ptext {
+    margin:auto; min-width: 10%; 
+    display:flex;
+    justify-self: center; 
+    font-weight:bolder}
+
+    ul.navbar {                                   
+        text-align: center;                    
+        list-style: none;
+        justify-content: center;
+        justify-self:center;
+        z-index: 3;  
+        padding-left: 0;
+        font-weight: bold;
+        background-color:rgb(33, 31, 50);
+        border-bottom: 3px solid rgb(33, 31, 50)
+        
+        }
+        ul.navbar li {                                 
+        font-family: Helvetica, Geneva, sans-serif;   /*change the font size and type*/
+        display: inline-block;            /*display list items in one line (makes list horizontal)*/
+        position: relative;                /*Will allow submenus to move, letting them open immediately below the different menu items (i.e. a location on the screen relative to the menu item chosen) */
+        padding: 15px 20px;           /*Add padding around the text*/
+        background: #fff;           /*Change background color of the menu items*/
+        margin-right: 0%;
+        margin-left: 0%;
+        cursor: pointer;              /*Change the mouse cursor to a pointer even if the text is not a link (useful for dropdown menus)*/
+        line-height: 100%;
+        margin-top: 3px;
+        width: 10%;
+        z-index: 3;
+        }
+        ul.navbar li:hover {                        /*This section styles the menu items when hovered (rolled) over*/
+        background: rgb(52, 49, 87);             /*Change the background color of list item when hovered over*/
+        color: #fff;                       /*Change the color of the text when hovered over*/
+    }
+       
+       ul.navbar li ul {                            /*This section styles the unordered list which will become the submenu*/
+        padding: 0;                       /*Get rid of any default padding*/
+        position: absolute;
+        display:block;
+        width:100%;          /*Works in conjunction with the earlier relative positioning code. Distinguishes submenu items from menu items and forces submenus to open in the same position for each menu item (i.e. an absolute position immediately below the menu item)*/
+       top: -100px;                        /*Add a little space between the menu and submenu*/
+       left: -10000px; 
+       justify-content: center;
+       align-items: center;
+       text-align: center               /*Sets submenu way offscreen on the left side so it's hidden from view*/                 /*Set the width for the submenu*/
+       }
+       
+       ul.navbar li ul li {                        /*This section styles nested list items (i.e. submenu items) */
+       background: rgb(52, 49, 87);           /*Set background color for submenu items*/
+       display: inline-flex;                 /*Display the submenu items as a block - literally displays all submenu items in one large rectangle.*/
+        color: #fff;                     /*Set submenu text color*/
+        padding: none;
+        font-size: 70%;
+        width: 50%;
+        justify-self: center;
+        text-align: center;
+        align-self: center;
+        border: 1px solid #fff
+        
+        }
+       ul.navbar li ul li:hover { background: rgb(124, 85, 191); } /*Change submenu item's background color when hovered over*/
+       ul.navbar li:hover ul {                 /*This section styles the submenu when a menu item it hovered over*/
+        display: inline-block;                /*Display submenu as a block when the menu item is hovered over*/
+        left :0px;
+        top: 45px;                        /*Moves submenu from way offscreen to its proper location on screen when the menu item is hovered over*/
+
+       }
+       
+        ol {color: #fff;}
+
+       @media only screen and (max-width: 600px) {
+         #wrapper {
+           font-size: 2em; text-align: center; justify-content: center;
+         }
+         ol {padding-left: 0}
+         img {width:80%; margin-left: 10%; margin-right: 10%}
+         ul.navbar #Portfolio:hover {
+           margin-bottom: 50%;
+         }
+       }
+    
+    ul.bottom {display:inline-flex; list-style-type: none; justify-self:center; justify-content: space-between; align-items: center;
+    width: 30%; padding-left: 0;text-decoration: underline;}
+
+    ul.bottom li {width: 10%}
